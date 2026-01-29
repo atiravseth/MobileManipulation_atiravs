@@ -6,11 +6,11 @@ robot.startup()
 
 #stow the robot
 robot.stow()
-robot.push_command()
+# robot.push_command()
 
 #move the arm and lift to max positions
 robot.arm.move_to(0.55)
-robot.lift.move_to(0.11)
+robot.lift.move_to(1.1)
 robot.push_command()
 robot.arm.wait_until_at_setpoint() #try it may not work
 
