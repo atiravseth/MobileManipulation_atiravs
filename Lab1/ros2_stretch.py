@@ -28,9 +28,9 @@ try:
     node.stow_the_robot()
 
     #move the robot base
-    node.move_base_by(0.5, 0.0, blocking=True)
-    node.rotate_base_by(np.radians(180), blocking=True)
-    node.move_base_by(0.5, 0.0, blocking=True)  
+    node.move_to_pose({'translate_mobile_base': 0.5}, blocking=True)
+    node.move_to_pose({'rotate_mobile_base': np.radians(180)}, blocking=True)
+    node.move_to_pose({'translate_mobile_base': 0.5}, blocking=True)
 
 finally:
     node.stop_the_robot()
