@@ -19,10 +19,7 @@ try:
 
     #move the head
     node.move_to_pose({'joint_head_pan': np.radians(40)}, blocking=True)
-    # node.move_to_pose({'joint_head_pan': node.get_joint_position('joint_head_pan') + np.radians(40)}, blocking=True)
-
     node.move_to_pose({'joint_head_tilt': np.radians(20)}, blocking=True)
-    # node.move_to_pose({'joint_head_tilt': node.get_joint_position('joint_head_tilt') + np.radians(30)}, blocking=True)
 
     #stow again
     node.stow_the_robot()
@@ -31,6 +28,11 @@ try:
     node.move_to_pose({'translate_mobile_base': 0.5}, blocking=True)
     node.move_to_pose({'rotate_mobile_base': np.radians(180)}, blocking=True)
     node.move_to_pose({'translate_mobile_base': 0.5}, blocking=True)
+
+except Exception as e:
+    print(f"Error occurred: {e}")
+    import traceback
+    traceback.print_exc()
 
 finally:
     node.stop_the_robot()
