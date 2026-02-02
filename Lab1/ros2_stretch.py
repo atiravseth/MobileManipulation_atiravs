@@ -19,7 +19,7 @@ try:
 
     #move the head
     node.move_to_pose({'joint_head_pan': np.radians(40)}, blocking=True)
-    node.move_to_pose({'joint_head_tilt': np.radians(20)}, blocking=True)
+    node.move_to_pose({'joint_head_tilt': np.radians(-40)}, blocking=True)
 
     #stow again
     node.stow_the_robot()
